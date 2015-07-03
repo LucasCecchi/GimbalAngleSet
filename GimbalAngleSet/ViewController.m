@@ -17,13 +17,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    _drone = [[DJIDrone alloc] initWithType:DJIDrone_Phantom];
+    _drone.delegate = self;
+    _gimbal = _drone.gimbal;
+    [_drone connectToDrone];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+-(void)droneOnConnectionStatusChanged:(DJIConnectionStatus)status{
 
+}
+- (IBAction)onClickSetAngle:(id)sender {
+    //code here for angle
+}
 @end

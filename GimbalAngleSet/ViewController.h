@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <DJISDK/DJISDK.h>
+@interface ViewController : UIViewController<DJIDroneDelegate>{
+    DJIDrone*_drone;
+    DJIGimbal*_gimbal;
+}
+@property (weak, nonatomic) IBOutlet UIButton *setAngleButton;
 
 @end
