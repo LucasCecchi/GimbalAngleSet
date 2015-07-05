@@ -29,7 +29,29 @@
     
 }
 -(void)droneOnConnectionStatusChanged:(DJIConnectionStatus)status{
-
+    //Switch to status bar instead of nslog later
+        switch (status) {
+        case ConnectionStartConnect:
+            
+            break;
+        case ConnectionSuccessed:
+        {
+             NSLog(@"Connected");
+            break;
+        }
+        case ConnectionFailed:
+        {
+             NSLog(@"Connect Error");
+            break;
+        }
+        case ConnectionBroken:
+        {
+            NSLog(@"Disconnected");
+            break;
+        }
+        default:
+            break;
+    }
 }
 - (IBAction)onClickSetAngle:(id)sender {
     //code here for angle
