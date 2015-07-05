@@ -34,4 +34,9 @@
 - (IBAction)onClickSetAngle:(id)sender {
     //code here for angle
 }
+- (void) viewWillDisappear:(BOOL)animated{
+    [_drone disconnectToDrone];
+    [_drone destroy];
+    
+}
 @end
